@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://thbdigital.no/
+
+# Sitemaps
+Sitemap: https://thbdigital.no/sitemap.xml

@@ -1,0 +1,75 @@
+// Font-sizes
+
+.fs-1-25rem {
+  font-size: 1.25rem;
+}
+
+.fs-1-5rem {
+  font-size: 1.5rem;
+}
+
+// Responsive font classes
+
+.fs-0-75-rem-lg-0-875rem {
+  font-size: 0.75rem;
+
+  @include media-breakpoint-up("lg") {
+    font-size: 0.875rem;
+  }
+}
+
+.fs-1-rem-lg-1-25rem {
+  font-size: 1rem;
+
+  @include media-breakpoint-up("lg") {
+    font-size: 1.25rem;
+  }
+}
+
+.fs-1-rem-lg-1-5rem {
+  font-size: 1rem;
+
+  @include media-breakpoint-up("lg") {
+    font-size: 1.5rem;
+  }
+}
+
+.fs-1-5-rem-lg-2rem {
+  font-size: 1.5rem;
+
+  @include media-breakpoint-up("lg") {
+    font-size: 2rem;
+  }
+}
+
+.fs-1-5-rem-lg-2-25rem {
+  font-size: 1.5rem;
+
+  @include media-breakpoint-up("lg") {
+    font-size: 2.25rem;
+  }
+}
+
+.fs-1-5-rem-lg-3rem {
+  font-size: 1.5rem;
+
+  @include media-breakpoint-up("lg") {
+    font-size: 3rem;
+  }
+}
+
+.fs-2-rem-lg-3rem {
+  font-size: 2rem;
+
+  @include media-breakpoint-up("lg") {
+    font-size: 3rem;
+  }
+}
+
+.fs-2-rem-lg-4rem {
+  font-size: 2rem;
+
+  @include media-breakpoint-up("lg") {
+    font-size: 4rem;
+  }
+}
