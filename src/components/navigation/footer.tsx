@@ -21,7 +21,7 @@ function Footer() {
   }
 
   return (
-    <footer className="m-15 m-lg-30 border-radius-5">
+    <footer>
       <div className="container-fluid px-30 py-45 py-lg-75">
         <div className="row pb-15 align-items-start">
           <div className="col-12 col-lg-6 d-flex flex-column justify-content-between">
