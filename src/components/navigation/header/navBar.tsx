@@ -5,7 +5,7 @@ import { globalSettingsQuery } from "@/lib/queries";
 import { useLanguage } from "@/context/LanguageContext";
 import { SiteSettingsInterface, NavbarProps } from "@/data/interface";
 import Link from "next/link";
-import { NavLink } from "@/components/reusable";
+// import { NavLink } from "@/components/reusable";
 import { useRef } from "react";
 import { LanguageSelector } from "@/components/reusable";
 import { getLocalizedPath } from "@/utils";
@@ -25,7 +25,7 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuToggle }) => {
           Logo
         </Link>
         <div className="nav-desktop-and-menu-toggle d-flex align-items-center">
-          <div className="nav-desktop-links d-none d-lg-block mr-30">
+          {/* <div className="nav-desktop-links d-none d-lg-block mr-30">
             <NavLink activeClassName="nav-active" className="nav-desktop-link" href={getLocalizedPath(language, "/")}>
               {data.linkForside?.[language] ?? "Hjem"}
             </NavLink>
@@ -38,12 +38,12 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuToggle }) => {
             <NavLink activeClassName="nav-active" className="nav-desktop-link" href={getLocalizedPath(language, "/kontakt")}>
               {data.linkKontakt?.[language] ?? "Kontakt"}
             </NavLink>
-          </div>
+          </div> */}
 
           {/* Language selector with dropdown */}
           <LanguageSelector />
           {/* Hamburger menu toggle */}
-          <div onClick={onMenuToggle} className="d-block d-lg-none menu-toggle" aria-label="Open menu">
+          <div onClick={onMenuToggle} className="d-block menu-toggle" aria-label="Open menu">
             <span></span>
             <span></span>
             <span></span>
