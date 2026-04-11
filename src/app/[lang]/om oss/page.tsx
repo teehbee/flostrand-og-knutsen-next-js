@@ -1,4 +1,4 @@
-// import ProjectPageContent from "./ProjectsPageContent";
+import AboutUsPageContent from "@/app/om-oss/AboutUsPageContent";
 // import { Metadata } from "next";
 // import { getProjectPageMetadata } from "@/lib/metadata/projectMetadata";
 
@@ -30,8 +30,8 @@
 //   };
 // }
 
-// const ProjectsPage = async () => {
-//   return <ProjectPageContent />;
-// };
+const AboutUsPage = async () => {
+  return <AboutUsPageContent />;
+};
 
-// export default ProjectsPage;
+export default AboutUsPage;

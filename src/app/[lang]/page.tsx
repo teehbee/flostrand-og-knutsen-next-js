@@ -1,5 +1,5 @@
 // app/page.tsx
-import { HomePageContent } from "./hjem/HomePageContent";
+import { HomePageContent } from "../hjem/HomePageContent";
 import { getFrontpageMetadata } from "@/lib/metadata/frontpageMetadata";
 import type { Metadata } from "next";
 

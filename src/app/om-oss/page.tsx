@@ -1,9 +1,9 @@
+import AboutUsPageContent from "./AboutUsPageContent";
 // import { Metadata } from "next";
-// import { getServicesPageMetadata } from "@/lib/metadata/servicesMetadata";
-// import ServicesPageContent from "./ServicesPageContent";
+// import { getProjectPageMetadata } from "@/lib/metadata/projectMetadata";
 
 // export async function generateMetadata(): Promise<Metadata> {
-//   const data = await getServicesPageMetadata();
+//   const data = await getProjectPageMetadata();
 
 //   return {
 //     title: data.title,
@@ -30,8 +30,8 @@
 //   };
 // }
 
-// const ServicesPage = async () => {
-//   return <ServicesPageContent />;
-// };
+const AboutUsPage = async () => {
+  return <AboutUsPageContent />;
+};
 
-// export default ServicesPage;
+export default AboutUsPage;

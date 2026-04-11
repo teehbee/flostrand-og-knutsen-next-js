@@ -15,7 +15,7 @@ const ContactContent: React.FC = () => {
 
   return (
     <>
-      <div className="container">Hello</div>
+      <div className="container">Kontakt</div>
     </>
   );
 };

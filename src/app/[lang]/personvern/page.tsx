@@ -1,5 +1,5 @@
 // import { Metadata } from "next";
-import PrivacyContent from "./PrivacyContent";
+import PrivacyContent from "@/app/personvern/PrivacyContent";
 // import { getAboutPageMetadata } from "@/lib/metadata/aboutMetadata";
 
 // export async function generateMetadata(): Promise<Metadata> {

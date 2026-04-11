@@ -43,6 +43,7 @@ export const TopBannerWithVideoTitleAndLink: React.FC<TopBannerWithVideoTitleAnd
             </div>
           </div>
         </div>
+        {/* Remove if no clip art is needed */}
         <div className="top-banner-bottom-clip"></div>
       </div>
     </section>

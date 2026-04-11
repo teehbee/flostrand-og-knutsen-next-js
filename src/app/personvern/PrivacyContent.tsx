@@ -1,14 +1,14 @@
 "use client";
 
-import { useLanguage } from "@/context/LanguageContext";
+// import { useLanguage } from "@/context/LanguageContext";
 import { useSanityData } from "@/utils";
 import { PrivacyPageInterface } from "@/data/interface";
 import { privacyPageQuery } from "@/lib/queries";
-import { PortableText } from "@portabletext/react";
+// import { PortableText } from "@portabletext/react";
 
 const PrivacyContent: React.FC = () => {
   // CMS Data
-  const { language } = useLanguage();
+  // const { language } = useLanguage();
   const data = useSanityData<PrivacyPageInterface>(privacyPageQuery);
 
   if (!data) {
@@ -21,10 +21,11 @@ const PrivacyContent: React.FC = () => {
         <div className="container ">
           <div className="row">
             <div className="col-12 col-lg-8 offset-lg-2">
-              <h1 className="pb-15">{data?.title?.[language]}</h1>
+              Personvern
+              {/* <h1 className="pb-15">{data?.title?.[language]}</h1>
               <div>
                 <PortableText value={data?.textContent?.[language]} />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
