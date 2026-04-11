@@ -34,18 +34,24 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onClose, isMenuOpen }) => {
           </button>
         </div>
         <div className="mobile-menu-wrapper d-flex flex-column justify-content-center align-items-center">
-          <nav className="d-flex flex-column text-center">
+          <nav className="d-flex flex-column">
             <NavLink activeClassName="nav-active" href={getLocalizedPath(language, "/")} onClick={onClose}>
-              {data.linkForside?.[language] ?? "Hjem"}
+              {data.linkFrontpage?.[language] ?? "Hjem"}
             </NavLink>
-            <NavLink activeClassName="nav-active" href={getLocalizedPath(language, "/tjenester")} onClick={onClose}>
-              {data.linkTjenester?.[language] ?? "Tjenester"}
-            </NavLink>
-            <NavLink activeClassName="nav-active" href={getLocalizedPath(language, "/prosjekter")} onClick={onClose}>
-              {data.linkProsjekter?.[language] ?? "Prosjekter"}
+            <div className="pb-15">
+              <div className="dark-font fw-700 pb-5">Tjenester</div>
+              <div className="pl-15">
+                <div className="dark-font">Tjeneste 1</div>
+                <div className="dark-font">Tjeneste 2</div>
+                <div className="dark-font">Tjeneste 3</div>
+              </div>
+            </div>
+
+            <NavLink activeClassName="nav-active" href={getLocalizedPath(language, "/om-oss")} onClick={onClose}>
+              {data.linkAboutUs?.[language] ?? "Om oss"}
             </NavLink>
             <NavLink activeClassName="nav-active" href={getLocalizedPath(language, "/kontakt")} onClick={onClose}>
-              {data.linkKontakt?.[language] ?? "Kontakt"}
+              {data.linkContact?.[language] ?? "Kontakt"}
             </NavLink>
           </nav>
         </div>

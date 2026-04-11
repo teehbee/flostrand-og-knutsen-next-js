@@ -147,6 +147,7 @@ export const globalSettingsQuery = `*[_type == "siteSettings"][0] {
     linkFrontpage,
     linkContact,
     linkPrivacy,
+    linkAboutUs,
     copyrightText,
     websiteCreatedByText,
     websiteCreatedByUrl,

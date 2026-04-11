@@ -18,7 +18,7 @@ const Header: React.FC<HeaderProps> = ({ stickyOnscroll = true }) => {
   const langs = ["", "en"];
 
   // Define base paths here
-  const basePaths = ["", "tjenester", "prosjekter", "kontakt", "personvern"];
+  const basePaths = ["", "om-oss", "kontakt", "personvern"];
 
   // Automatically define path for all languages
   const knownPaths = langs.flatMap((lang) =>
@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({ stickyOnscroll = true }) => {
       // Make sure correct syntax
       if (lang === "") return p === "" ? "/" : `/${p}`;
       return p === "" ? `/${lang}` : `/${lang}/${p}`;
-    })
+    }),
   );
 
   // Page detection

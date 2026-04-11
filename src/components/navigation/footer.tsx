@@ -29,36 +29,32 @@ function Footer() {
               <Link href={getLocalizedPath(language, "/")}>Logo</Link>
             </div>
             <div className="d-flex pt-15 flex-column flex-lg-row">
-              <Link className="pb-5 pr-10" href={getLocalizedPath(language, "/tjenester")}>
-                {data.linkTjenester?.[language] ?? "Tjenester"}
-              </Link>
-              <div className="pr-10">•</div>
-              <Link className="pb-5 pr-10" href={getLocalizedPath(language, "/prosjekter")}>
-                {data.linkProsjekter?.[language] ?? "Prosjekter"}
+              <Link className="pb-5 pr-10" href={getLocalizedPath(language, "/om-oss")}>
+                {data.linkAboutUs?.[language] ?? "Om oss"}
               </Link>
               <div className="pr-10">•</div>
               <Link className="pb-5 pr-10" href={getLocalizedPath(language, "/kontakt")}>
-                {data.linkKontakt?.[language] ?? "Kontakt"}
+                {data.linkContact?.[language] ?? "Kontakt"}
               </Link>
               <div className="pr-10">•</div>
               <Link className="pb-5 pr-10" href={getLocalizedPath(language, "/personvern")}>
-                {data.linkPersonvern?.[language] ?? "Personvern"}
+                {data.linkPrivacy?.[language] ?? "Personvern"}
               </Link>
             </div>
             <div className="fs-0-75-rem-lg-0-875rem d-flex justify-content-between py-15">
-              <div>{data.copyrightTekst?.[language] ?? "Alle rettigheter reservert"}</div>
+              <div>{data.copyrightText?.[language] ?? "Alle rettigheter reservert"}</div>
             </div>
             <div className="fs-0-75-rem-lg-0-875rem">
-              {data.nettsideLagetAvTekst?.[language]}{" "}
-              <a target="_blank" href={data.nettsideLagetAvUrl}>
+              {data.websiteCreatedByText?.[language]}{" "}
+              <a target="_blank" href={data.websiteCreatedByUrl}>
                 {data.companyTitle}
               </a>
             </div>
           </div>
           <div className="col-12 col-lg-6 d-flex flex-column align-items-start align-items-lg-end pt-30 pt-lg-0">
             <div>
-              <Link className="btn btn-primary" href={getLocalizedPath(language, data.footerCTALenkeDestinasjon ?? "/")}>
-                {data.footerCTALenkeTekst?.[language]}
+              <Link className="btn btn-primary" href={getLocalizedPath(language, data.footerCTALinkDestination ?? "/")}>
+                {data.footerCTALinkText?.[language]}
               </Link>
             </div>
             {/* <div>

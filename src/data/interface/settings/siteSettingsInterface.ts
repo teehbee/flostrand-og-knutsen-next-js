@@ -21,6 +21,7 @@ export interface SiteSettingsInterface {
   linkedinUrl?: string;
   linkFrontpage?: LocaleString;
   linkContact?: LocaleString;
+  linkAboutUs?: LocaleString;
   linkPrivacy?: LocaleString;
   copyrightText?: LocaleString;
   websiteCreatedByText?: LocaleString;
