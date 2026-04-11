@@ -1,3 +1,3 @@
-import { ToppBannerWithBorderRadiusAndMargin } from "./TopBannerWithBorderRadiusAndMargin";
+import { TopBannerWithVideoTitleAndLink } from "./TopBannerWithVideoTitleAndLink";
 
-export { ToppBannerWithBorderRadiusAndMargin };
+export { TopBannerWithVideoTitleAndLink };

@@ -24,52 +24,116 @@ body.no-scroll {
   }
 }
 
+// header {
+//   background: transparent;
+//   padding: 30px 15px 30px;
+//   width: 100%;
+//   z-index: 200;
+//   transition: all 0.3s ease;
+//   // Transparent header
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   left: 0;
+//   color: $light-font-color;
+//   .header-logo {
+//     color: $light-font-color;
+//   }
+//   .language-toggle {
+//     color: $light-font-color;
+//   }
+//   &.header-abnormal {
+//     color: $dark-font-color !important;
+//     .nav-desktop-link,
+//     .language-toggle {
+//       color: $dark-font-color !important;
+//     }
+//   }
+//   &.is-sticky {
+//     position: fixed;
+//     background: $header-main-color;
+//     top: 0;
+//     left: 0;
+//     padding: 15px;
+//     box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+//     .nav-desktop-link {
+//       color: $dark-font-color !important;
+//     }
+//     .header-logo {
+//       color: $dark-font-color !important;
+//     }
+//     .language-toggle {
+//       color: $dark-font-color !important;
+//     }
+//     .menu-toggle {
+//       span {
+//         background: $dark-font-color;
+//       }
+//     }
+//     .language-menu-text {
+//       color: $dark-font-color !important;
+//     }
+//   }
+// }
+
 header {
   background: transparent;
   padding: 30px 15px 30px;
   width: 100%;
   z-index: 200;
-  transition: all 0.3s ease;
-  // Transparent header
-  position: absolute;
+  transition:
+    background 0.3s ease,
+    padding 0.3s ease,
+    box-shadow 0.3s ease,
+    color 0.3s ease;
+
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
+
   color: $light-font-color;
+
   .header-logo {
     color: $light-font-color;
   }
+
   .language-toggle {
     color: $light-font-color;
   }
+
   &.header-abnormal {
     color: $dark-font-color !important;
+
     .nav-desktop-link,
     .language-toggle {
       color: $dark-font-color !important;
     }
   }
+
   &.is-sticky {
-    position: fixed;
     background: $header-main-color;
-    top: 0;
-    left: 0;
     padding: 15px;
     box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+
     .nav-desktop-link {
       color: $dark-font-color !important;
     }
+
     .header-logo {
       color: $dark-font-color !important;
     }
+
     .language-toggle {
       color: $dark-font-color !important;
     }
+
     .menu-toggle {
       span {
         background: $dark-font-color;
       }
     }
+
     .language-menu-text {
       color: $dark-font-color !important;
     }
@@ -182,11 +246,15 @@ header {
       }
       .bar1 {
         transform: rotate(45deg);
-        transition: transform 0.3s ease, background-color 0.3s ease;
+        transition:
+          transform 0.3s ease,
+          background-color 0.3s ease;
       }
       .bar2 {
         transform: rotate(-45deg);
-        transition: transform 0.3s ease, background-color 0.3s ease;
+        transition:
+          transform 0.3s ease,
+          background-color 0.3s ease;
       }
 
       &:hover .bar1 {

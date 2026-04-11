@@ -22,24 +22,9 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuToggle }) => {
     <nav role="navigation" ref={navRef} className="main-navbar">
       <div className="container-fluid d-flex justify-content-between align-items-center nav-container">
         <Link className="header-logo" href={getLocalizedPath(language, "/")} aria-label="Link til forsiden">
-          Logo
+          Marius Knutsen
         </Link>
         <div className="nav-desktop-and-menu-toggle d-flex align-items-center">
-          {/* <div className="nav-desktop-links d-none d-lg-block mr-30">
-            <NavLink activeClassName="nav-active" className="nav-desktop-link" href={getLocalizedPath(language, "/")}>
-              {data.linkForside?.[language] ?? "Hjem"}
-            </NavLink>
-            <NavLink activeClassName="nav-active" className="nav-desktop-link" href={getLocalizedPath(language, "/tjenester")}>
-              {data.linkTjenester?.[language] ?? "Tjenester"}
-            </NavLink>
-            <NavLink activeClassName="nav-active" className="nav-desktop-link" href={getLocalizedPath(language, "/prosjekter")}>
-              {data.linkProsjekter?.[language] ?? "Prosjekter"}
-            </NavLink>
-            <NavLink activeClassName="nav-active" className="nav-desktop-link" href={getLocalizedPath(language, "/kontakt")}>
-              {data.linkKontakt?.[language] ?? "Kontakt"}
-            </NavLink>
-          </div> */}
-
           {/* Language selector with dropdown */}
           <LanguageSelector />
           {/* Hamburger menu toggle */}

@@ -19,14 +19,12 @@ export interface SiteSettingsInterface {
   facebookUrl?: string;
   instagramUrl?: string;
   linkedinUrl?: string;
-  linkForside?: LocaleString;
-  linkTjenester?: LocaleString;
-  linkProsjekter?: LocaleString;
-  linkKontakt?: LocaleString;
-  linkPersonvern?: LocaleString;
-  copyrightTekst?: LocaleString;
-  nettsideLagetAvTekst?: LocaleString;
-  nettsideLagetAvUrl?: string;
-  footerCTALenkeTekst?: LocaleString;
-  footerCTALenkeDestinasjon?: string;
+  linkFrontpage?: LocaleString;
+  linkContact?: LocaleString;
+  linkPrivacy?: LocaleString;
+  copyrightText?: LocaleString;
+  websiteCreatedByText?: LocaleString;
+  websiteCreatedByUrl?: string;
+  footerCTALinkText?: LocaleString;
+  footerCTALinkDestination?: string;
 }

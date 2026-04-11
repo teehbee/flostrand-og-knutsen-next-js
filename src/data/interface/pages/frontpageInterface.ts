@@ -1,10 +1,7 @@
-import { ServiceSelectorInterface, TopBannerInterface, StepsArrayInterface, InfoBoxesInterface } from "../objects";
+import { TopBannerWitnVideoTitleAndLinkInterface } from "../props/reusable";
 
 export interface FrontpageInterface {
   _id: string;
-  _type: "forside";
-  toppbanner?: TopBannerInterface;
-  tjenesteVelger?: ServiceSelectorInterface;
-  stepsArray?: StepsArrayInterface;
-  infoBokser?: InfoBoxesInterface;
+  _type: "frontpage";
+  topBanner?: TopBannerWitnVideoTitleAndLinkInterface;
 }

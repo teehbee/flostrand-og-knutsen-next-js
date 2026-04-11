@@ -1,6 +1,6 @@
 "use client";
 
-import { useLanguage } from "@/context/LanguageContext";
+// import { useLanguage } from "@/context/LanguageContext";
 import { useSanityData } from "@/utils";
 import { FrontpageInterface } from "@/data/interface";
 import { frontpageQuery } from "@/lib/queries";

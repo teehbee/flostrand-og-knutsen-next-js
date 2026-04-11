@@ -6,9 +6,9 @@ $light-font-color: #ffffff;
 
 $accent-color: #716645;
 $alt-accent-color: #948865;
-$main-bg-color: #f4f4f4;
-$alt-bg-color: #ffffff;
-$white-bg-color: #f3f2e9;
+$main-bg-color: #f3f3f3;
+$alt-bg-color: #f3f3f3;
+$white-bg-color: #f3f3f3;
 $dark-bg-color: #2b2e30;
 $alt-dark-bg-color: #716645;
 $header-color: #181d24;
@@ -28,7 +28,9 @@ $border-color: $accent-color;
   padding: 30px 20px 15px 20px;
 
   .text-box-with-icon-wrapper-icon-wrapper {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    box-shadow:
+      rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     top: 0px;
     left: 0px;
     transform: translate(-50%, -50%);
@@ -65,7 +67,10 @@ $border-color: $accent-color;
       border-radius: 50%;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       cursor: pointer;
-      transition: box-shadow 0.3s ease, border-width 0.2s ease, transform 0.2s ease;
+      transition:
+        box-shadow 0.3s ease,
+        border-width 0.2s ease,
+        transform 0.2s ease;
       &:hover {
         transform: scale(1.05);
       }
@@ -91,6 +96,13 @@ $border-color: $accent-color;
       transform: rotate(180deg);
     }
   }
+}
+
+// Banner with video and image, including clip art on the bottom
+
+.top-banner-wrapper {
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 85% 100%, 82% 96%, 0 96%);
 }
 
 @media screen and (min-width: 768px) {
@@ -123,5 +135,11 @@ $border-color: $accent-color;
         max-height: 500px;
       }
     }
+  }
+
+  // Banner with video and image, including clip art on the bottom
+
+  .top-banner-wrapper {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 76% 100%, 73% 95%, 0 95%);
   }
 }

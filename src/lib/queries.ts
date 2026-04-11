@@ -1,62 +1,33 @@
-// Sanity queries
+// Frontpage
 
-// Forside
+export const frontpageQuery = `*[_type == "frontpage"][0]{
 
-export const frontpageQuery = `*[_type == "forside"][0]{
-
-  toppbanner {
-    banner {
-      asset->,
-      alt,
+"topBanner": topBannerWithVideo {
+  title,
+  textContent,
+  linkText,
+  linkDestination,
+  media {
+    video {
+      asset->{
+        url
+      }   
     },
-    tittel,
-    tekstinnhold,
-    lenketekst,
-    lenkedestinasjon,
-  },
-
-  tjenesteVelger {
-    seksjonsTittel,
-    tjenester[]{
-      tittel,
-      tekstinnhold,
-      lenketekst,
-      lenkedestinasjon,
-      bilde {
-        asset->,
-        alt,
-      }
+    fallbackImage {
+      asset->{
+        url
+      },
+      alt
     }
-  },
-
-    stepsArray {
-    seksjonsTittel,
-    prosessSteg[]{
-      tittel,
-      tekstinnhold,
-      lenketekst,
-      lenkedestinasjon,
-      bilde {
-        asset->,
-        alt,
-      }
-    }
-  },
-
-    infoBokser {
-      seksjonsTittel,
-      bokser[]{
-        tittel,
-        tekstinnhold,
-      }
-    },
+  }
+},
   
   metadata
 }`;
 
-// Tjenster
+// Service
 
-export const servicesQuery = `*[_type == "tjenester"][0]{
+export const serviceQuery = `*[_type == "tjeneste"][0]{
   toppbanner {
     banner {
       asset->,
@@ -90,39 +61,9 @@ export const servicesQuery = `*[_type == "tjenester"][0]{
     },
 }`;
 
-// Prosjekter
+// Contact
 
-export const projectsPageQuery = `*[_type == "prosjekter"][0] {
-  toppbanner {
-    banner {
-      asset->,
-      alt,
-    },
-    tittel,
-    tekstinnhold,
-    lenketekst,
-    lenkedestinasjon,
-  },
-
-    prosjekter {
-    tiles[]{
-      tittel,
-      undertittel,
-      tekstinnhold,
-      lenketekst,
-      lenkedestinasjon,
-      bilde {
-        asset->,
-        alt,
-      }
-    }
-  },
-
-}`;
-
-// Kontakt
-
-export const contactPageQuery = `*[_type == "kontakt"][0] {
+export const contactPageQuery = `*[_type == "contact"][0] {
   toppbanner {
     banner {
       asset->,
@@ -187,24 +128,6 @@ export const privacyPageQuery = `*[_type == "privacy"][0]{
 
 // Globalt
 
-export const globalComponentsQuery = `*[_type == "globalComponents"][0]{
-  contactCTA {
-    bilde {
-      asset->,
-      alt,
-    },
-    tekst,
-    lenketekst,
-    lenkedestinasjon,
-  },
-
-  projectsPreviewAdds {
-    tittel,
-    lenketekst,
-    lenkedestinasjon,
-  }
-}`;
-
 export const globalSettingsQuery = `*[_type == "siteSettings"][0] {
     siteTitle,
     siteUrl,
@@ -221,14 +144,12 @@ export const globalSettingsQuery = `*[_type == "siteSettings"][0] {
     facebookUrl,
     instagramUrl,
     linkedinUrl,
-    linkForside,
-    linkTjenester,
-    linkProsjekter,
-    linkKontakt,
-    linkPersonvern,
-    copyrightTekst,
-    nettsideLagetAvTekst,
-    nettsideLagetAvUrl,
-    footerCTALenkeTekst,
-    footerCTALenkeDestinasjon
+    linkFrontpage,
+    linkContact,
+    linkPrivacy,
+    copyrightText,
+    websiteCreatedByText,
+    websiteCreatedByUrl,
+    footerCTALinkText,
+    footerCTALinkDestination
 }`;

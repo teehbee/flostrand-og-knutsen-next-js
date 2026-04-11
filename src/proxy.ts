@@ -22,7 +22,7 @@ export function proxy(req: NextRequest) {
   }
 
   // Known Norwegian paths
-  const knownPaths = ["/", "/tjenester", "/prosjekter", "/kontakt", "/personvern"];
+  const knownPaths = ["/", "/tjeneste", "/om-oss", "/kontakt", "/personvern"];
 
   // If unknown path, redirect to 404
   if (!knownPaths.includes(pathname)) {

@@ -15,6 +15,10 @@ export const metadata: Metadata = {
     default: "Flostrand og Knutsen",
     template: "%s | Flostrand og Knutsen",
   },
+  robots: {
+    index: false,
+    follow: false,
+  },
   description: "Offisiell nettside for Flostrand og Knutsen",
   icons: { icon: "/assets/favicon.ico" },
 };
