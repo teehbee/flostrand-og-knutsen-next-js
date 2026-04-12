@@ -128,6 +128,11 @@ export const aboutPageQuery = `*[_type == "about"][0] {
     linkText,
     linkDestination,
   },
+
+  textBoxWithPageName {
+      title,
+      textContent
+    },
     
 }`;
 
