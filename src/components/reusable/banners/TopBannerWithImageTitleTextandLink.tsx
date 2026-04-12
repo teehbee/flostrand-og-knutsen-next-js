@@ -20,7 +20,7 @@ export const TopBannerImageTitleTextLink: React.FC<TopBannerImageTitleTextLinkPr
             <div className="row">
               <div className="col-12 col-lg-6">
                 <h1 className="light-font fs-2-rem-lg-4rem pb-15">{title ?? "test"}</h1>
-                <div className="fs-1-5-rem-lg-2-25rem light-font pb-15">
+                <div className="fs-1-rem-lg-1-5rem light-font pb-15">
                   <PortableText value={textContent ?? []} />
                 </div>
                 <div>

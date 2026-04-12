@@ -77,6 +77,22 @@ export const contactPageQuery = `*[_type == "contact"][0] {
     
 }`;
 
+// About
+
+export const aboutPageQuery = `*[_type == "about"][0] {
+  topBanner {
+    banner {
+      asset->,
+      alt,
+    },
+    title,
+    textContent,
+    linkText,
+    linkDestination,
+  },
+    
+}`;
+
 // 404 page
 
 export const notFoundQuery = `*[_type == "notFound"][0]{
