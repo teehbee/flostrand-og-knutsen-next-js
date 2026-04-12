@@ -61,8 +61,17 @@ export const servicesQuery = `
     _id,
     title,
     "slug": slug.current,
+    subPageImage {
+      asset->{
+        _id,
+        url
+      },
+      alt
+    },
     subPageTitle,
-    subPageTextContent
+    subPageTextContent,
+    subPageLinkText,
+    subPageLinkDestination
   }
 `;
 
@@ -75,6 +84,16 @@ export const serviceBySlugQuery = `
 
     subPageTitle,
     subPageTextContent,
+    subPageLinkText,
+    subPageLinkDestination,
+
+    subPageImage {
+      asset->{
+        _id,
+        url
+      },
+      alt
+    },
 
     topBanner {
       banner {
