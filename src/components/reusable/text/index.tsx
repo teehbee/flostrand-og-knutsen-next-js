@@ -1,3 +1,5 @@
 import { TextBoxesWithIcon } from "./TextBoxesWithIcon";
+import { TextBoxWithBorderAndPageNameLarge } from "./TextBoxWithBorderAndPageNameLarge";
+import { TextBoxWithBorderAndPageNameMedium } from "./TextBoxWithBorderAndPageNameMedium";
 
-export { TextBoxesWithIcon };
+export { TextBoxesWithIcon, TextBoxWithBorderAndPageNameLarge, TextBoxWithBorderAndPageNameMedium };

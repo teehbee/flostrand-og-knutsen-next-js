@@ -4,7 +4,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useSanityData } from "@/utils";
 import { FrontpageInterface } from "@/data/interface";
 import { frontpageQuery } from "@/lib/queries";
-import { TopBannerWithVideoTitleAndLink } from "@/components/reusable";
+import { TopBannerWithVideoTitleAndLink, TextBoxWithBorderAndPageNameLarge, TextBoxWithBorderAndPageNameMedium } from "@/components/reusable";
 
 export const HomePageContent: React.FC = () => {
   const { language } = useLanguage();
@@ -40,6 +40,8 @@ export const HomePageContent: React.FC = () => {
             : undefined,
         }}
       />
+      <TextBoxWithBorderAndPageNameLarge title={data.frontpageUpperTextBox?.title?.[language] ?? ""} textContent={data?.frontpageUpperTextBox?.textContent?.[language]} />
+      <TextBoxWithBorderAndPageNameMedium title={data.frontpageLowerTextBox?.title?.[language] ?? ""} textContent={data?.frontpageLowerTextBox?.textContent?.[language]} />
     </>
   );
 };

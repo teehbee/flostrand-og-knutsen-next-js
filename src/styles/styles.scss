@@ -98,6 +98,17 @@ h6 {
   color: $main-font-color;
 }
 
+.portable-text-content {
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: normal;
+  min-width: 0;
+}
+
+.portable-text-content p {
+  white-space: normal;
+}
+
 .main-bg-color {
   background: $main-bg-color;
 }
@@ -157,6 +168,10 @@ h6 {
 }
 
 // Utilities border
+
+.border-top {
+  border-top: 1px solid $border-color;
+}
 
 .border-bottom {
   border-bottom: 1px solid $border-color;

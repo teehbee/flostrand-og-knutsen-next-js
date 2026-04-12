@@ -21,6 +21,16 @@ export const frontpageQuery = `*[_type == "frontpage"][0]{
     }
   }
 },
+
+frontpageUpperTextBox {
+      title,
+      textContent
+    },
+
+frontpageLowerTextBox {
+      title,
+      textContent
+    },
   
   metadata
 }`;

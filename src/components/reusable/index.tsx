@@ -3,8 +3,8 @@ import { TopBannerWithVideoTitleAndLink, TopBannerImageTitleTextLink } from "./b
 import { ServicesSelector, ContactSectionSelector, SelectorWithArrowButtons, SelectorWithButtonsAndTextboxes } from "./selectors";
 import { PortraitAndTextCTA } from "./cta";
 import { SingleImageAndTextLarge, TextAndImageAlternateWithHeading, TextAndImageAlternate } from "./imageAndText";
-import { TextBoxesWithIcon } from "./text";
+import { TextBoxesWithIcon, TextBoxWithBorderAndPageNameLarge, TextBoxWithBorderAndPageNameMedium } from "./text";
 import { AccordionWithHeading } from "./accordions";
 import { LanguageSelector } from "./language";
 
-export { NavLink, TopBannerWithVideoTitleAndLink, ServicesSelector, PortraitAndTextCTA, ContactSectionSelector, SingleImageAndTextLarge, TextAndImageAlternateWithHeading, TextBoxesWithIcon, TextAndImageAlternate, SelectorWithArrowButtons, SelectorWithButtonsAndTextboxes, AccordionWithHeading, LanguageSelector, TopBannerImageTitleTextLink };
+export { NavLink, TopBannerWithVideoTitleAndLink, ServicesSelector, PortraitAndTextCTA, ContactSectionSelector, SingleImageAndTextLarge, TextAndImageAlternateWithHeading, TextBoxesWithIcon, TextAndImageAlternate, SelectorWithArrowButtons, SelectorWithButtonsAndTextboxes, AccordionWithHeading, LanguageSelector, TopBannerImageTitleTextLink, TextBoxWithBorderAndPageNameLarge, TextBoxWithBorderAndPageNameMedium };

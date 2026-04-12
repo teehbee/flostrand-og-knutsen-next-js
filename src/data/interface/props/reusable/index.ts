@@ -2,7 +2,7 @@ import { TopBannerWithTitleTextAndLinkButtonProps, TopBannerWitnVideoTitleAndLin
 import { PortraitAndTextCTAProps } from "./cta/PortraitAndTextCTAProps";
 import { ImageAndTextProps, ImageAndTextAlternateProps, TextAndImageAlternateWithHeadingProps } from "./imageAndText";
 import { SectionSelectorProps, SelectorWithArrowButtonsProps, SelectorWithButtonsAndTextboxesProps, SelectorWithButtonsImageAndTextProps } from "./selectors";
-import { TextBoxArrayProps } from "./text";
+import { TextBoxArrayProps, TextBoxWithTextContentAndTitleProps } from "./text";
 import { AccordionWithTitleProps } from "./accordions";
 
-export type { PortraitAndTextCTAProps, ImageAndTextProps, ImageAndTextAlternateProps, TextAndImageAlternateWithHeadingProps, SectionSelectorProps, SelectorWithArrowButtonsProps, SelectorWithButtonsAndTextboxesProps, SelectorWithButtonsImageAndTextProps, TextBoxArrayProps, AccordionWithTitleProps, TopBannerWithTitleTextAndLinkButtonProps, TopBannerWitnVideoTitleAndLinkInterface, TopBannerWithVideoTitleAndLinkProps, TopBannerImageTitleTextLinkProps };
+export type { PortraitAndTextCTAProps, ImageAndTextProps, ImageAndTextAlternateProps, TextAndImageAlternateWithHeadingProps, SectionSelectorProps, SelectorWithArrowButtonsProps, SelectorWithButtonsAndTextboxesProps, SelectorWithButtonsImageAndTextProps, TextBoxArrayProps, AccordionWithTitleProps, TopBannerWithTitleTextAndLinkButtonProps, TopBannerWitnVideoTitleAndLinkInterface, TopBannerWithVideoTitleAndLinkProps, TopBannerImageTitleTextLinkProps, TextBoxWithTextContentAndTitleProps };
