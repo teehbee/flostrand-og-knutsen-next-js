@@ -1,6 +1,6 @@
 "use-client";
 
-import { globalSettingsQuery } from "@/lib/queries";
+import { globalSettingsQuery, servicesQuery } from "@/lib/queries";
 import { SiteSettingsInterface, MobileMenuProps } from "@/data/interface";
 import { NavLink } from "@/components/reusable";
 import Link from "next/link";
@@ -8,6 +8,16 @@ import { useRef } from "react";
 import { useMenuBehavior, useSanityData } from "../../../utils";
 import { useLanguage } from "@/context/LanguageContext";
 import { getLocalizedPath } from "../../../utils";
+import { LocaleString, LocalePortableText } from "@/data/language";
+
+export interface ServicesListInterface {
+  _id: string;
+  _type: "service";
+  title?: string;
+  slug: string;
+  subPageTitle?: LocaleString;
+  subPageTextContent?: LocalePortableText;
+}
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ onClose, isMenuOpen }) => {
   const menuRef = useRef<HTMLDivElement>(null);
@@ -18,6 +28,9 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onClose, isMenuOpen }) => {
   const { language } = useLanguage();
 
   const data = useSanityData<SiteSettingsInterface>(globalSettingsQuery);
+
+  // Fetch dynamic services from cms for displaying links
+  const services = useSanityData<ServicesListInterface[]>(servicesQuery);
 
   if (!data) {
     return null;
@@ -38,14 +51,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onClose, isMenuOpen }) => {
             <NavLink activeClassName="nav-active" href={getLocalizedPath(language, "/")} onClick={onClose}>
               {data.linkFrontpage?.[language] ?? "Hjem"}
             </NavLink>
-            <div className="pb-15">
-              <div className="dark-font fw-700 pb-5">Tjenester</div>
-              <div className="pl-15">
-                <div className="dark-font">Tjeneste 1</div>
-                <div className="dark-font">Tjeneste 2</div>
-                <div className="dark-font">Tjeneste 3</div>
-              </div>
-            </div>
+            {services?.map((service) => (
+              <NavLink key={service._id} activeClassName="nav-active" href={getLocalizedPath(language, `/tjenester/${service.slug}`)} onClick={onClose}>
+                {service.subPageTitle?.[language] ?? service.title ?? "Tjeneste"}
+              </NavLink>
+            ))}
 
             <NavLink activeClassName="nav-active" href={getLocalizedPath(language, "/om-oss")} onClick={onClose}>
               {data.linkAboutUs?.[language] ?? "Om oss"}

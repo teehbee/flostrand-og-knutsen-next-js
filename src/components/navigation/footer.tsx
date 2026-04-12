@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { useSanityData } from "@/utils";
-import { globalSettingsQuery } from "@/lib/queries";
+import { globalSettingsQuery, servicesQuery } from "@/lib/queries";
 import { SiteSettingsInterface } from "@/data/interface";
 import { FacebookIcon, InstagramIcon, LinkedinIcon } from "../../assets/icon";
+import { ServicesListInterface } from "./header/mobileMenu";
 
 import { useLanguage } from "@/context/LanguageContext";
 import { getLocalizedPath } from "@/utils";
@@ -15,6 +16,7 @@ function Footer() {
 
   // CMS data
   const data = useSanityData<SiteSettingsInterface>(globalSettingsQuery);
+  const services = useSanityData<ServicesListInterface[]>(servicesQuery);
 
   if (!data) {
     return null;
@@ -28,7 +30,19 @@ function Footer() {
             <div>
               <Link href={getLocalizedPath(language, "/")}>Logo</Link>
             </div>
-            <div className="d-flex pt-15 flex-column flex-lg-row">
+            <div className="d-flex pt-15 flex-column flex-lg-row align-items-lg-center">
+              <Link className="pb-5 pr-10" href={getLocalizedPath(language, "/")}>
+                {data.linkAboutUs?.[language] ?? "Hjem"}
+              </Link>
+              <div className="pr-10">•</div>
+              {services?.map((service) => (
+                <div key={service._id} className="d-flex align-items-lg-center flex-column flex-lg-row">
+                  <Link className="pb-5 pr-10" href={getLocalizedPath(language, `/tjenester/${service.slug}`)}>
+                    {service.subPageTitle?.[language] ?? service.title ?? "Tjeneste"}
+                  </Link>
+                  <div className="pr-10">•</div>
+                </div>
+              ))}
               <Link className="pb-5 pr-10" href={getLocalizedPath(language, "/om-oss")}>
                 {data.linkAboutUs?.[language] ?? "Om oss"}
               </Link>

@@ -27,18 +27,67 @@ export const frontpageQuery = `*[_type == "frontpage"][0]{
 
 // Service
 
-export const serviceQuery = `*[_type == "tjeneste"][0]{
-  topBanner {
-    banner {
-      asset->,
-      alt,
-    },
+export const servicesQuery = `
+  *[_type == "service"] | order(_createdAt asc) {
+    _id,
     title,
-    textContent,
-    linkText,
-    linkDestination,
-  },
-}`;
+    "slug": slug.current,
+    subPageTitle,
+    subPageTextContent
+  }
+`;
+
+export const serviceBySlugQuery = `
+  *[_type == "service" && slug.current == $slug][0]{
+    _id,
+    _type,
+    title,
+    "slug": slug.current,
+
+    subPageTitle,
+    subPageTextContent,
+
+    topBanner {
+      banner {
+        asset->{
+          _id,
+          url
+        },
+        alt
+      },
+      title,
+      textContent,
+      linkText,
+      linkDestination
+    },
+
+    textBoxWithPageName {
+      title,
+      textBlock
+    },
+
+    "tiles": upperArrayWithImageAndText.tileArray[] {
+      _key,
+      image {
+        asset->{
+          _id,
+          url
+        },
+        alt
+      },
+      title,
+      textContent,
+      linkText,
+      linkDestination
+    }
+  }
+`;
+
+export const serviceSlugsQuery = `
+  *[_type == "service" && defined(slug.current)]{
+    "slug": slug.current
+  }
+`;
 
 // Contact
 
