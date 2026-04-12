@@ -10,7 +10,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { getLocalizedPath } from "../../../utils";
 import { LocaleString, LocalePortableText } from "@/data/language";
 
-interface ServiceMenuItemInterface {
+export interface ServicesListInterface {
   _id: string;
   _type: "service";
   title?: string;
@@ -28,7 +28,9 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onClose, isMenuOpen }) => {
   const { language } = useLanguage();
 
   const data = useSanityData<SiteSettingsInterface>(globalSettingsQuery);
-  const services = useSanityData<ServiceMenuItemInterface[]>(servicesQuery);
+
+  // Fetch dynamic services from cms for displaying links
+  const services = useSanityData<ServicesListInterface[]>(servicesQuery);
 
   if (!data) {
     return null;
