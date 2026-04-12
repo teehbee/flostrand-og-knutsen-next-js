@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
+import { useEffect, useRef } from "react";
 import { getLocalizedPath } from "@/utils";
 import { useLanguage } from "@/context/LanguageContext";
 import { TopBannerWithVideoTitleAndLinkProps } from "@/data/interface/props/reusable";
@@ -13,12 +14,22 @@ export const TopBannerWithVideoTitleAndLink: React.FC<TopBannerWithVideoTitleAnd
   const { language } = useLanguage();
   // Disable if single language
 
+  // For iPhone
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(() => {});
+    }
+  }, []);
+
   return (
     <section className="p-0">
       <div className="top-banner-wrapper container-fluid h-100vh p-0 pos-relative">
         {/* Video in banner */}
         {media?.video?.asset?.url ? (
-          <video className="img-cover filter-30-brightness" autoPlay loop muted playsInline>
+          <video className="img-cover filter-50-brightness" autoPlay loop muted playsInline preload="auto" poster={media?.fallbackImage?.asset?.url}>
             <source src={media.video.asset.url} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
