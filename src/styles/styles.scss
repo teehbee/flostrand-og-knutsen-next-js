@@ -98,17 +98,6 @@ h6 {
   color: $main-font-color;
 }
 
-.portable-text-content {
-  white-space: normal;
-  word-break: normal;
-  overflow-wrap: normal;
-  min-width: 0;
-}
-
-.portable-text-content p {
-  white-space: normal;
-}
-
 .main-bg-color {
   background: $main-bg-color;
 }
@@ -414,6 +403,10 @@ h6 {
   aspect-ratio: 3 / 2;
 }
 
+.aspect-ratio-1-1 {
+  aspect-ratio: 1;
+}
+
 .w-100 {
   width: 100%;
 }
@@ -535,6 +528,10 @@ h6 {
 
 .pl-50 {
   padding-left: 50px;
+}
+
+.pl-75 {
+  padding-left: 100px;
 }
 
 .pr-10 {
@@ -705,6 +702,10 @@ h6 {
     padding-right: 30px;
   }
 
+  .pl-md-0 {
+    padding-left: 0px;
+  }
+
   .pl-md-30 {
     padding-left: 30px;
   }
@@ -850,6 +851,10 @@ h6 {
   .py-lg-90 {
     padding-top: 90px;
     padding-bottom: 90px;
+  }
+
+  .pl-lg-0 {
+    padding-left: 0px;
   }
 
   .pr-lg-50 {
