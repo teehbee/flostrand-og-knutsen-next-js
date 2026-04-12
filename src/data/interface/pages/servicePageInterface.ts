@@ -13,7 +13,7 @@ export interface ServicePageInterface {
 
   textBoxWithPageName?: {
     title?: LocaleString;
-    textBlock?: LocalePortableText;
+    textContent?: LocalePortableText;
   };
 
   tiles?: {

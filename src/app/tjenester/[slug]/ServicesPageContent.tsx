@@ -4,7 +4,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useSanityData } from "@/utils";
 import { ServicePageInterface } from "@/data/interface/pages/servicePageInterface";
 import { serviceBySlugQuery } from "@/lib/queries";
-import { TopBannerImageTitleTextLink } from "@/components/reusable";
+import { TopBannerImageTitleTextLink, TextBoxWithBorderAndPageNameLarge } from "@/components/reusable";
 import { useParams } from "next/navigation";
 
 const ServicesContent: React.FC = () => {
@@ -28,6 +28,7 @@ const ServicesContent: React.FC = () => {
           alt: data.topBanner?.banner?.alt?.[language] ?? "",
         }}
       />
+      <TextBoxWithBorderAndPageNameLarge title={data.textBoxWithPageName?.title?.[language] ?? ""} textContent={data.textBoxWithPageName?.textContent?.[language]} />
     </>
   );
 };

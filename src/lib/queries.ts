@@ -73,7 +73,7 @@ export const serviceBySlugQuery = `
 
     textBoxWithPageName {
       title,
-      textBlock
+      textContent
     },
 
     "tiles": upperArrayWithImageAndText.tileArray[] {
