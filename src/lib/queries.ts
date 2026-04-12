@@ -57,7 +57,7 @@ frontpageLowerTextBox {
 // Service
 
 export const servicesQuery = `
-  *[_type == "service"] | order(_createdAt asc) {
+ *[_type == "service" && defined(slug.current)] | order(_createdAt asc) {
     _id,
     title,
     "slug": slug.current,
