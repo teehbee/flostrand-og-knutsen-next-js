@@ -64,49 +64,16 @@ export const serviceQuery = `*[_type == "tjeneste"][0]{
 // Contact
 
 export const contactPageQuery = `*[_type == "contact"][0] {
-  toppbanner {
+  topBanner {
     banner {
       asset->,
       alt,
     },
-    tittel,
-    tekstinnhold,
-    lenketekst,
-    lenkedestinasjon,
+    title,
+    textContent,
+    linkText,
+    linkDestination,
   },
-  
-  kontaktSideVelger {
-  omMeg,
-  kontaktSkjema,
-  },
-
-  portrettOgTekstLarge {
-    bilde {
-      asset->,
-      alt,
-    },
-    tittel,
-    tekstinnhold,
-    lenketekst,
-    lenkedestinasjon,
-    },
-
-    kontaktSkjemaInnhold {
-    tittel,
-    navn,
-    epost,
-    melding,
-    paakrevd,
-    send,
-    sender,
-    suksess,
-    feil,
-    placeholderName,
-    placeholderEmail,
-    placeholderMessage,
-    godkjenning,
-    paakrevdFelt,  
-    },
     
 }`;
 

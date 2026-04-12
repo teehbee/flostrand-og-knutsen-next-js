@@ -8,8 +8,8 @@ export interface TopBannerInterface {
     };
     alt: LocaleString;
   };
-  tittel: LocaleString;
-  tekstinnhold: LocalePortableText;
-  lenketekst: LocaleString;
-  lenkedestinasjon: string;
+  title: LocaleString;
+  textContent: LocalePortableText;
+  linkText: LocaleString;
+  linkDestination: string;
 }

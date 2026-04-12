@@ -10,32 +10,32 @@ export const HomePageContent: React.FC = () => {
   const { language } = useLanguage();
 
   // CMS data
-  const frontpageData = useSanityData<FrontpageInterface>(frontpageQuery);
+  const data = useSanityData<FrontpageInterface>(frontpageQuery);
 
-  if (!frontpageData) {
+  if (!data) {
     return null;
   }
   return (
     <>
       <TopBannerWithVideoTitleAndLink
-        title={frontpageData.topBanner?.title?.[language] ?? ""}
-        textContent={frontpageData?.topBanner?.textContent?.[language]}
-        linkDestination={frontpageData.topBanner?.linkDestination}
-        linkText={frontpageData.topBanner?.linkText?.[language] ?? ""}
+        title={data.topBanner?.title?.[language] ?? ""}
+        textContent={data?.topBanner?.textContent?.[language]}
+        linkDestination={data.topBanner?.linkDestination}
+        linkText={data.topBanner?.linkText?.[language] ?? ""}
         media={{
-          video: frontpageData.topBanner?.media?.video?.asset?.url
+          video: data.topBanner?.media?.video?.asset?.url
             ? {
                 asset: {
-                  url: frontpageData.topBanner.media.video.asset.url,
+                  url: data.topBanner.media.video.asset.url,
                 },
               }
             : undefined,
-          fallbackImage: frontpageData.topBanner?.media?.fallbackImage?.asset?.url
+          fallbackImage: data.topBanner?.media?.fallbackImage?.asset?.url
             ? {
                 asset: {
-                  url: frontpageData.topBanner.media.fallbackImage.asset.url,
+                  url: data.topBanner.media.fallbackImage.asset.url,
                 },
-                alt: frontpageData.topBanner.media.fallbackImage.alt?.[language],
+                alt: data.topBanner.media.fallbackImage.alt?.[language],
               }
             : undefined,
         }}
