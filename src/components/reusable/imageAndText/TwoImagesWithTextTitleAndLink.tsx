@@ -17,7 +17,7 @@ export interface ImageWithAlt {
 export interface TwoImagesWithTextAndLinkInterface {
   mainImage: ImageWithAlt;
   secondaryImage: ImageWithAlt;
-  textContent: PortableTextBlock[];
+  textContent?: PortableTextBlock[];
   linkText?: string;
   linkDestination?: string;
 }
