@@ -1,3 +1,5 @@
+// Cut corners on images
+
 .img-clip-wrapper {
   --corner-cut: 50px;
 
@@ -19,8 +21,55 @@
   }
 }
 
+// Clip art om bottom on the right side
+
+.bottom-right-clip-art {
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 85% 100%, 82% 96%, 0 96%);
+}
+
+// Clip art on top and bottom in the middle
+
+.top-bottom-clip-art {
+  position: relative;
+  overflow: hidden;
+}
+
+.top-bottom-clip-art::before,
+.top-bottom-clip-art::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 50%;
+  height: 30px;
+  background: #f4f4f4;
+  z-index: 2;
+  pointer-events: none;
+  border: none;
+}
+
+.top-bottom-clip-art::before {
+  top: -1px;
+  left: 0;
+  width: 50%;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 24px) 100%, 0 100%);
+}
+
+.top-bottom-clip-art::after {
+  bottom: -1px;
+  clip-path: polygon(24px 0, 100% 0, 100% 100%, 0 100%);
+}
+
 @media screen and (min-width: 992px) {
   .img-clip-wrapper {
     --corner-cut: 80px;
+  }
+
+  .bottom-right-clip-art {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 76% 100%, 73% 95%, 0 95%);
+  }
+  .top-bottom-clip-art::before,
+  .top-bottom-clip-art::after {
+    height: 50px;
   }
 }

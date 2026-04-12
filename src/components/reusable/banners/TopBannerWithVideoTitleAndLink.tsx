@@ -26,7 +26,7 @@ export const TopBannerWithVideoTitleAndLink: React.FC<TopBannerWithVideoTitleAnd
 
   return (
     <section className="p-0">
-      <div className="top-banner-wrapper container-fluid h-100vh p-0 pos-relative">
+      <div className="bottom-right-clip-art container-fluid h-100vh p-0 pos-relative">
         {/* Video in banner */}
         {media?.video?.asset?.url ? (
           <video className="img-cover filter-50-brightness" autoPlay loop muted playsInline preload="auto" poster={media?.fallbackImage?.asset?.url}>
