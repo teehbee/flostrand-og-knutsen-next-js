@@ -1,4 +1,5 @@
 import { TopBannerWitnVideoTitleAndLinkInterface, TextBoxWithTextContentAndTitleProps, TwoImagesWithTextAndLink } from "../props/reusable";
+import { BannerInterface } from "./contentInterfaces";
 
 export interface FrontpageInterface {
   _id: string;
@@ -7,4 +8,5 @@ export interface FrontpageInterface {
   frontpageUpperTextBox?: TextBoxWithTextContentAndTitleProps;
   frontpageLowerTextBox?: TextBoxWithTextContentAndTitleProps;
   frontpageTiles?: TwoImagesWithTextAndLink;
+  bottomBanner?: BannerInterface;
 }

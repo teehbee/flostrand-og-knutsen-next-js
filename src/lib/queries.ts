@@ -50,6 +50,19 @@ frontpageLowerTextBox {
     linkDestination
   },
 
+    bottomBanner {
+      banner {
+        asset->{
+          _id,
+          url
+        },
+        alt
+      },
+      title,
+      linkText,
+      linkDestination
+    },
+
   
   metadata
 }`;

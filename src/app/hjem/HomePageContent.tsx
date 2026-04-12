@@ -4,7 +4,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useSanityData } from "@/utils";
 import { FrontpageInterface } from "@/data/interface";
 import { frontpageQuery, servicesQuery } from "@/lib/queries";
-import { TopBannerWithVideoTitleAndLink, TextBoxWithBorderAndPageNameLarge, TextBoxWithBorderAndPageNameMedium, TwoImagesWithTextTitleAndLink, ImageTextAndLinkTiles } from "@/components/reusable";
+import { TopBannerWithVideoTitleAndLink, TextBoxWithBorderAndPageNameLarge, TextBoxWithBorderAndPageNameMedium, TwoImagesWithTextTitleAndLink, ImageTextAndLinkTiles, BannerTopBottomClipArt } from "@/components/reusable";
 import { ServiceFrontpageItemInterface } from "@/data/interface/pages/contentInterfaces";
 
 export const HomePageContent: React.FC = () => {
@@ -13,6 +13,8 @@ export const HomePageContent: React.FC = () => {
   // CMS data
   const data = useSanityData<FrontpageInterface>(frontpageQuery);
   const services = useSanityData<ServiceFrontpageItemInterface[]>(servicesQuery);
+
+  console.log(data);
 
   if (!data) {
     return null;
@@ -69,6 +71,15 @@ export const HomePageContent: React.FC = () => {
             linkHref: `/tjenester/${service.slug}`,
           })) ?? []
         }
+      />
+      <BannerTopBottomClipArt
+        banner={{
+          asset: { url: data.bottomBanner?.banner?.asset?.url ?? "" },
+          alt: data.bottomBanner?.banner?.alt?.[language] ?? "",
+        }}
+        title={data.bottomBanner?.title?.[language] ?? "Tester"}
+        linkText={data.bottomBanner?.linkText?.[language] ?? ""}
+        linkDestination={data.bottomBanner?.linkDestination ?? ""}
       />
     </>
   );
