@@ -5,25 +5,7 @@ import { useSanityData } from "@/utils";
 import { FrontpageInterface } from "@/data/interface";
 import { frontpageQuery, servicesQuery } from "@/lib/queries";
 import { TopBannerWithVideoTitleAndLink, TextBoxWithBorderAndPageNameLarge, TextBoxWithBorderAndPageNameMedium, TwoImagesWithTextTitleAndLink, ImageTextAndLinkTiles } from "@/components/reusable";
-import { LocaleString, LocalePortableText } from "@/data/language";
-
-interface ServiceFrontpageItemInterface {
-  _id: string;
-  _type: "service";
-  title?: string;
-  slug: string;
-  subPageImage?: {
-    asset?: {
-      _id: string;
-      url: string;
-    };
-    alt?: LocaleString;
-  };
-  subPageTitle?: LocaleString;
-  subPageTextContent?: LocalePortableText;
-  subPageLinkText?: LocaleString;
-  subPageLinkDestination?: string;
-}
+import { ServiceFrontpageItemInterface } from "@/data/interface/pages/contentInterfaces";
 
 export const HomePageContent: React.FC = () => {
   const { language } = useLanguage();

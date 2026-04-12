@@ -4,23 +4,9 @@
 import Image from "next/image";
 import { getLocalizedPath } from "@/utils";
 import { useLanguage } from "@/context/LanguageContext";
-import type { PortableTextBlock } from "@portabletext/types";
 import { PortableText } from "@portabletext/react";
+import { ImageTextAndLinkTilesProps } from "@/data/interface/props/reusable";
 import Link from "next/link";
-
-export interface ImageTextAndLinkTileItem {
-  _id: string;
-  title: string;
-  textContent?: PortableTextBlock[];
-  imageUrl: string;
-  imageAlt: string;
-  linkText: string;
-  linkHref: string;
-}
-
-export interface ImageTextAndLinkTilesProps {
-  items: ImageTextAndLinkTileItem[];
-}
 
 export const ImageTextAndLinkTiles: React.FC<ImageTextAndLinkTilesProps> = ({ items }) => {
   const { language } = useLanguage();
