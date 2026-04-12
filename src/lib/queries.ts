@@ -28,85 +28,47 @@ export const frontpageQuery = `*[_type == "frontpage"][0]{
 // Service
 
 export const serviceQuery = `*[_type == "tjeneste"][0]{
-  toppbanner {
+  topBanner {
     banner {
       asset->,
       alt,
     },
-    tittel,
-    tekstinnhold,
-    lenketekst,
-    lenkedestinasjon,
+    title,
+    textContent,
+    linkText,
+    linkDestination,
   },
-
-    tjenestevelger {
-    instances[]{
-      tittel,
-      tekstinnhold,
-      lenketekst,
-      lenkedestinasjon,
-      textboxes[]{
-        textBoxTitle,
-        textBoxContent,
-      }
-    }
-  },
-
-    faqAccordion {
-    sectionTitle,
-      accordions[]{
-        title,
-        textContent,
-      }
-    },
 }`;
 
 // Contact
 
 export const contactPageQuery = `*[_type == "contact"][0] {
-  toppbanner {
+  topBanner {
     banner {
       asset->,
       alt,
     },
-    tittel,
-    tekstinnhold,
-    lenketekst,
-    lenkedestinasjon,
+    title,
+    textContent,
+    linkText,
+    linkDestination,
   },
-  
-  kontaktSideVelger {
-  omMeg,
-  kontaktSkjema,
-  },
+    
+}`;
 
-  portrettOgTekstLarge {
-    bilde {
+// About
+
+export const aboutPageQuery = `*[_type == "about"][0] {
+  topBanner {
+    banner {
       asset->,
       alt,
     },
-    tittel,
-    tekstinnhold,
-    lenketekst,
-    lenkedestinasjon,
-    },
-
-    kontaktSkjemaInnhold {
-    tittel,
-    navn,
-    epost,
-    melding,
-    paakrevd,
-    send,
-    sender,
-    suksess,
-    feil,
-    placeholderName,
-    placeholderEmail,
-    placeholderMessage,
-    godkjenning,
-    paakrevdFelt,  
-    },
+    title,
+    textContent,
+    linkText,
+    linkDestination,
+  },
     
 }`;
 

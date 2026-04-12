@@ -1,5 +1,5 @@
 import { NavLink } from "./navigation";
-import { TopBannerWithVideoTitleAndLink } from "./banners";
+import { TopBannerWithVideoTitleAndLink, TopBannerImageTitleTextLink } from "./banners";
 import { ServicesSelector, ContactSectionSelector, SelectorWithArrowButtons, SelectorWithButtonsAndTextboxes } from "./selectors";
 import { PortraitAndTextCTA } from "./cta";
 import { SingleImageAndTextLarge, TextAndImageAlternateWithHeading, TextAndImageAlternate } from "./imageAndText";
@@ -7,4 +7,4 @@ import { TextBoxesWithIcon } from "./text";
 import { AccordionWithHeading } from "./accordions";
 import { LanguageSelector } from "./language";
 
-export { NavLink, TopBannerWithVideoTitleAndLink, ServicesSelector, PortraitAndTextCTA, ContactSectionSelector, SingleImageAndTextLarge, TextAndImageAlternateWithHeading, TextBoxesWithIcon, TextAndImageAlternate, SelectorWithArrowButtons, SelectorWithButtonsAndTextboxes, AccordionWithHeading, LanguageSelector };
+export { NavLink, TopBannerWithVideoTitleAndLink, ServicesSelector, PortraitAndTextCTA, ContactSectionSelector, SingleImageAndTextLarge, TextAndImageAlternateWithHeading, TextBoxesWithIcon, TextAndImageAlternate, SelectorWithArrowButtons, SelectorWithButtonsAndTextboxes, AccordionWithHeading, LanguageSelector, TopBannerImageTitleTextLink };

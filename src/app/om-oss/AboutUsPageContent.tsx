@@ -1,20 +1,32 @@
 "use client";
-// import { useLanguage } from "@/context/LanguageContext";
-// import { useSanityData } from "@/utils";
+import { useLanguage } from "@/context/LanguageContext";
+import { useSanityData } from "@/utils";
+import { AboutUsPageInterface } from "@/data/interface/pages/aboutPageInterface";
+import { aboutPageQuery } from "@/lib/queries";
+import { TopBannerImageTitleTextLink } from "@/components/reusable";
 
 const AboutUsPageContent: React.FC = () => {
   // CMS data
 
-  // const { language } = useLanguage();
-  // const data = useSanityData<ProjectsPageInterface>(projectsPageQuery);
+  const { language } = useLanguage();
+  const data = useSanityData<AboutUsPageInterface>(aboutPageQuery);
 
-  // if (!data) {
-  //   return null;
-  // }
+  if (!data) {
+    return null;
+  }
 
   return (
     <>
-      <div className="container">About us</div>
+      <TopBannerImageTitleTextLink
+        title={data.topBanner?.title?.[language] ?? ""}
+        textContent={data?.topBanner?.textContent?.[language]}
+        linkDestination={data.topBanner?.linkDestination}
+        linkText={data.topBanner?.linkText?.[language] ?? ""}
+        banner={{
+          asset: { url: data.topBanner?.banner?.asset?.url ?? "" },
+          alt: data.topBanner?.banner?.alt?.[language] ?? "",
+        }}
+      />
     </>
   );
 };
