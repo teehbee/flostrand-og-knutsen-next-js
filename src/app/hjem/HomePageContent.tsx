@@ -3,14 +3,34 @@
 import { useLanguage } from "@/context/LanguageContext";
 import { useSanityData } from "@/utils";
 import { FrontpageInterface } from "@/data/interface";
-import { frontpageQuery } from "@/lib/queries";
-import { TopBannerWithVideoTitleAndLink, TextBoxWithBorderAndPageNameLarge, TextBoxWithBorderAndPageNameMedium, TwoImagesWithTextTitleAndLink } from "@/components/reusable";
+import { frontpageQuery, servicesQuery } from "@/lib/queries";
+import { TopBannerWithVideoTitleAndLink, TextBoxWithBorderAndPageNameLarge, TextBoxWithBorderAndPageNameMedium, TwoImagesWithTextTitleAndLink, ImageTextAndLinkTiles } from "@/components/reusable";
+import { LocaleString, LocalePortableText } from "@/data/language";
+
+interface ServiceFrontpageItemInterface {
+  _id: string;
+  _type: "service";
+  title?: string;
+  slug: string;
+  subPageImage?: {
+    asset?: {
+      _id: string;
+      url: string;
+    };
+    alt?: LocaleString;
+  };
+  subPageTitle?: LocaleString;
+  subPageTextContent?: LocalePortableText;
+  subPageLinkText?: LocaleString;
+  subPageLinkDestination?: string;
+}
 
 export const HomePageContent: React.FC = () => {
   const { language } = useLanguage();
 
   // CMS data
   const data = useSanityData<FrontpageInterface>(frontpageQuery);
+  const services = useSanityData<ServiceFrontpageItemInterface[]>(servicesQuery);
 
   if (!data) {
     return null;
@@ -55,6 +75,19 @@ export const HomePageContent: React.FC = () => {
         }}
       />
       <TextBoxWithBorderAndPageNameMedium title={data.frontpageLowerTextBox?.title?.[language] ?? ""} textContent={data?.frontpageLowerTextBox?.textContent?.[language]} />
+      <ImageTextAndLinkTiles
+        items={
+          services?.map((service) => ({
+            _id: service._id,
+            title: service.subPageTitle?.[language] ?? "",
+            textContent: service.subPageTextContent?.[language] ?? [],
+            imageUrl: service.subPageImage?.asset?.url ?? "",
+            imageAlt: service.subPageImage?.alt?.[language] ?? "",
+            linkText: service.subPageLinkText?.[language] ?? "Les mer",
+            linkHref: `/tjenester/${service.slug}`,
+          })) ?? []
+        }
+      />
     </>
   );
 };
