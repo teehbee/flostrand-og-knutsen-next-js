@@ -12,7 +12,7 @@ export const TextBoxWithBorderAndPageNameLarge: React.FC<TextBoxWithPageNameProp
   const { title, textContent } = content;
 
   return (
-    <section className="m-15 m-lg-30">
+    <section>
       <div className="container-wide border-top pt-15">
         <div>
           <span className="accent-color"> {"< >"} </span>
@@ -20,7 +20,7 @@ export const TextBoxWithBorderAndPageNameLarge: React.FC<TextBoxWithPageNameProp
         </div>
         <div className="container">
           <div className="row">
-            <div className="col-12 col-md-6 offset-md-3 py-30 fs-1-5-rem-lg-2-25rem">
+            <div className="col-12 col-md-6 offset-md-3 pt-30 fs-1-5-rem-lg-2-25rem">
               <PortableText value={textContent ?? []} />
             </div>
           </div>

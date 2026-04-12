@@ -105,6 +105,29 @@ $border-color: $accent-color;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 85% 100%, 82% 96%, 0 96%);
 }
 
+// Two images with cut corners, text content and link
+
+.img-clip-wrapper {
+  --corner-cut: 50px;
+
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &.top-right {
+    clip-path: polygon(0 0, calc(100% - var(--corner-cut)) 0, 100% var(--corner-cut), 100% 100%, 0 100%);
+  }
+
+  &.bottom-right {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--corner-cut)), calc(100% - var(--corner-cut)) 100%, 0 100%);
+  }
+}
+
 @media screen and (min-width: 768px) {
   // Selector with arrow buttons
 
@@ -141,5 +164,11 @@ $border-color: $accent-color;
 
   .top-banner-wrapper {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 76% 100%, 73% 95%, 0 95%);
+  }
+
+  // Two images in tiles with cut cornes and textcontent/link
+
+  .img-clip-wrapper {
+    --corner-cut: 80px;
   }
 }

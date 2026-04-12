@@ -4,7 +4,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useSanityData } from "@/utils";
 import { FrontpageInterface } from "@/data/interface";
 import { frontpageQuery } from "@/lib/queries";
-import { TopBannerWithVideoTitleAndLink, TextBoxWithBorderAndPageNameLarge, TextBoxWithBorderAndPageNameMedium } from "@/components/reusable";
+import { TopBannerWithVideoTitleAndLink, TextBoxWithBorderAndPageNameLarge, TextBoxWithBorderAndPageNameMedium, TwoImagesWithTextTitleAndLink } from "@/components/reusable";
 
 export const HomePageContent: React.FC = () => {
   const { language } = useLanguage();
@@ -41,6 +41,19 @@ export const HomePageContent: React.FC = () => {
         }}
       />
       <TextBoxWithBorderAndPageNameLarge title={data.frontpageUpperTextBox?.title?.[language] ?? ""} textContent={data?.frontpageUpperTextBox?.textContent?.[language]} />
+      <TwoImagesWithTextTitleAndLink
+        textContent={data.frontpageTiles?.textContent?.[language]}
+        linkText={data.frontpageTiles?.linkText?.[language]}
+        linkDestination={data.frontpageTiles?.linkDestination}
+        mainImage={{
+          asset: { url: data.frontpageTiles?.mainImage.asset.url ?? "" },
+          alt: data.frontpageTiles?.mainImage.alt?.[language] ?? "",
+        }}
+        secondaryImage={{
+          asset: { url: data.frontpageTiles?.secondaryImage.asset.url ?? "" },
+          alt: data.frontpageTiles?.secondaryImage.alt?.[language] ?? "",
+        }}
+      />
       <TextBoxWithBorderAndPageNameMedium title={data.frontpageLowerTextBox?.title?.[language] ?? ""} textContent={data?.frontpageLowerTextBox?.textContent?.[language]} />
     </>
   );

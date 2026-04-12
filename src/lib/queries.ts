@@ -31,6 +31,25 @@ frontpageLowerTextBox {
       title,
       textContent
     },
+
+"frontpageTiles": frontpageTileWithTwoImagesAndText {
+    mainImage {
+      asset->{
+        url
+      },
+      alt
+    },
+    secondaryImage {
+      asset->{
+        url
+      },
+      alt
+    },
+    textContent,
+    linkText,
+    linkDestination
+  },
+
   
   metadata
 }`;
