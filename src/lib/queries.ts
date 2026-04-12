@@ -28,37 +28,16 @@ export const frontpageQuery = `*[_type == "frontpage"][0]{
 // Service
 
 export const serviceQuery = `*[_type == "tjeneste"][0]{
-  toppbanner {
+  topBanner {
     banner {
       asset->,
       alt,
     },
-    tittel,
-    tekstinnhold,
-    lenketekst,
-    lenkedestinasjon,
+    title,
+    textContent,
+    linkText,
+    linkDestination,
   },
-
-    tjenestevelger {
-    instances[]{
-      tittel,
-      tekstinnhold,
-      lenketekst,
-      lenkedestinasjon,
-      textboxes[]{
-        textBoxTitle,
-        textBoxContent,
-      }
-    }
-  },
-
-    faqAccordion {
-    sectionTitle,
-      accordions[]{
-        title,
-        textContent,
-      }
-    },
 }`;
 
 // Contact
