@@ -20,7 +20,7 @@ export const TextBoxWithBorderAndPageNameMedium: React.FC<TextBoxWithPageNamePro
         </div>
         <div className="container">
           <div className="row">
-            <div className="col-12 col-md-9 py-30 fs-1-5-rem-lg-2rem">
+            <div className="col-12 col-md-9 pt-30 fs-1-5-rem-lg-2rem">
               <PortableText value={textContent ?? []} />
             </div>
           </div>
