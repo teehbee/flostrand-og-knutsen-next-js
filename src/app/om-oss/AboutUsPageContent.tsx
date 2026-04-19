@@ -3,7 +3,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useSanityData } from "@/utils";
 import { AboutUsPageInterface } from "@/data/interface/pages/aboutPageInterface";
 import { aboutPageQuery } from "@/lib/queries";
-import { TopBannerImageTitleTextLink, TextBoxWithBorderAndPageNameLarge } from "@/components/reusable";
+import { TopBannerImageTitleTextLink, TextBoxWithBorderAndPageNameLarge, ImageAndTextAlternating1 } from "@/components/reusable";
 
 const AboutUsPageContent: React.FC = () => {
   // CMS data
@@ -28,6 +28,19 @@ const AboutUsPageContent: React.FC = () => {
         }}
       />
       <TextBoxWithBorderAndPageNameLarge title={data.textBoxWithPageName?.title?.[language] ?? ""} textContent={data.textBoxWithPageName?.textContent?.[language]} />
+      <ImageAndTextAlternating1
+        items={
+          data?.upperArrayWithImageAndText?.tiles?.map((tile, index) => ({
+            _id: tile?._key ?? `${index}`,
+            title: tile?.title?.[language] ?? "",
+            textContent: tile?.textContent?.[language] ?? [],
+            imageUrl: tile?.image?.asset?.url ?? "",
+            imageAlt: tile?.image?.alt?.[language] ?? "",
+            linkText: tile?.linkText?.[language] ?? "",
+            linkHref: tile?.linkDestination ?? "",
+          })) ?? []
+        }
+      />
     </>
   );
 };

@@ -1,12 +1,12 @@
 import { PortableTextBlock } from "@portabletext/react";
 
 interface Array {
-  tittel: string;
-  undertittel: string;
-  tekstinnhold: PortableTextBlock[];
-  lenketekst?: string;
-  lenkedestinasjon?: string;
-  bilde?: {
+  title: string;
+  subTitle: string;
+  textContent: PortableTextBlock[];
+  linkText?: string;
+  linkDestination?: string;
+  image?: {
     asset?: {
       url: string;
     };

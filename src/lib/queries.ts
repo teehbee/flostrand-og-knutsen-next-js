@@ -184,6 +184,23 @@ export const aboutPageQuery = `*[_type == "about"][0] {
       title,
       textContent
     },
+
+upperArrayWithImageAndText {
+  "tiles": tileArray[] {
+    _key,
+    image {
+      asset->{
+        _id,
+        url
+      },
+      alt
+    },
+    title,
+    textContent,
+    linkText,
+    linkDestination
+  }
+},
     
 }`;
 

@@ -14,8 +14,6 @@ export const HomePageContent: React.FC = () => {
   const data = useSanityData<FrontpageInterface>(frontpageQuery);
   const services = useSanityData<ServiceFrontpageItemInterface[]>(servicesQuery);
 
-  console.log(data);
-
   if (!data) {
     return null;
   }
