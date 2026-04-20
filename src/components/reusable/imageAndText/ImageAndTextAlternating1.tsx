@@ -33,8 +33,8 @@ export const ImageAndTextAlternating1: React.FC<ImageTextAndLinkTilesProps> = ({
             <div key={item._id} className="pb-30">
               <div className="d-flex flex-column flex-lg-row row pb-60">
                 <div className="d-flex col-12 col-lg-6 align-items-center">
-                  <div className="">
-                    <Image className="img-full" src={item.imageUrl} alt={item.imageAlt} width={550} height={500} />
+                  <div className="aspect-ratio-1">
+                    <Image className="img-cover" src={item.imageUrl} alt={item.imageAlt} width={550} height={500} />
                   </div>
                 </div>
                 <div className="d-flex flex-column justify-content-between col-12 col-lg-6">
