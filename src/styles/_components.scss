@@ -45,6 +45,8 @@ $border-color: $accent-color;
   }
 }
 
+// Text and image tiles alternating
+
 // Selector with arrow buttons
 
 .selector-with-arrows-row {
@@ -97,6 +99,8 @@ $border-color: $accent-color;
     }
   }
 }
+
+// Image slider and gallery
 
 @media screen and (min-width: 768px) {
   // Selector with arrow buttons

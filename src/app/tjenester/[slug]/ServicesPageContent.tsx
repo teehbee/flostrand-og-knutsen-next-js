@@ -4,7 +4,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useSanityData } from "@/utils";
 import { ServicePageInterface } from "@/data/interface/pages/servicePageInterface";
 import { serviceBySlugQuery } from "@/lib/queries";
-import { TopBannerImageTitleTextLink, TextBoxWithBorderAndPageNameLarge, ImageAndTextAlternating1 } from "@/components/reusable";
+import { TopBannerImageTitleTextLink, TextBoxWithBorderAndPageNameLarge, ImageAndTextAlternating1, ImageSlider } from "@/components/reusable";
 import { useParams } from "next/navigation";
 
 const ServicesContent: React.FC = () => {
@@ -44,6 +44,7 @@ const ServicesContent: React.FC = () => {
           })) ?? []
         }
       />
+      <ImageSlider />
     </>
   );
 };
