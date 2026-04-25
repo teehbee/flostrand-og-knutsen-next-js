@@ -3,13 +3,15 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useSanityData } from "@/utils";
 import { AboutUsPageInterface } from "@/data/interface/pages/aboutPageInterface";
 import { aboutPageQuery } from "@/lib/queries";
-import { TopBannerImageTitleTextLink, TextBoxWithBorderAndPageNameLarge, ImageAndTextAlternating1 } from "@/components/reusable";
+import { TopBannerImageTitleTextLink, TextBoxWithBorderAndPageNameLarge, ImageAndTextAlternating1, BannerTopBottomClipArtWithTextContent } from "@/components/reusable";
 
 const AboutUsPageContent: React.FC = () => {
   // CMS data
 
   const { language } = useLanguage();
   const data = useSanityData<AboutUsPageInterface>(aboutPageQuery);
+
+  console.log(data);
 
   if (!data) {
     return null;
@@ -31,6 +33,29 @@ const AboutUsPageContent: React.FC = () => {
       <ImageAndTextAlternating1
         items={
           data?.upperArrayWithImageAndText?.tiles?.map((tile, index) => ({
+            _id: tile?._key ?? `${index}`,
+            title: tile?.title?.[language] ?? "",
+            textContent: tile?.textContent?.[language] ?? [],
+            imageUrl: tile?.image?.asset?.url ?? "",
+            imageAlt: tile?.image?.alt?.[language] ?? "",
+            linkText: tile?.linkText?.[language] ?? "",
+            linkHref: tile?.linkDestination ?? "",
+          })) ?? []
+        }
+      />
+      <BannerTopBottomClipArtWithTextContent
+        banner={{
+          asset: { url: data.bottomBanner?.banner?.asset?.url ?? "" },
+          alt: data.bottomBanner?.banner?.alt?.[language] ?? "",
+        }}
+        title={data.bottomBanner?.title?.[language] ?? "Tester"}
+        linkText={data.bottomBanner?.linkText?.[language] ?? ""}
+        linkDestination={data.bottomBanner?.linkDestination ?? ""}
+        textContent={data?.bottomBanner?.textContent?.[language]}
+      />
+      <ImageAndTextAlternating1
+        items={
+          data?.lowerArrayWithImageAndText?.tiles?.map((tile, index) => ({
             _id: tile?._key ?? `${index}`,
             title: tile?.title?.[language] ?? "",
             textContent: tile?.textContent?.[language] ?? [],

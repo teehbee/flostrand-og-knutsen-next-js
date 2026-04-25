@@ -1,4 +1,4 @@
-import { LocaleString } from "@/data/language";
+import { LocaleString, LocalePortableText } from "@/data/language";
 
 export interface BannerInterface {
   banner?: {
@@ -11,4 +11,5 @@ export interface BannerInterface {
   title?: LocaleString;
   linkText?: LocaleString;
   linkDestination?: string;
+  textContent?: LocalePortableText;
 }

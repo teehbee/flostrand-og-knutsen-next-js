@@ -1,5 +1,6 @@
 import { TopBannerInterface } from "../objects";
 import { TextBoxWithTextContentAndTitleProps } from "../props/reusable";
+import { BannerInterface } from "./contentInterfaces";
 import { LocaleString, LocalePortableText } from "@/data/language";
 
 export interface AboutUsPageInterface {
@@ -8,6 +9,8 @@ export interface AboutUsPageInterface {
   topBanner?: TopBannerInterface;
   textBoxWithPageName?: TextBoxWithTextContentAndTitleProps;
   upperArrayWithImageAndText?: ImageAndTextAlternateProps;
+  bottomBanner?: BannerInterface;
+  lowerArrayWithImageAndText?: ImageAndTextAlternateProps;
 }
 
 // Props for alternating images and text
