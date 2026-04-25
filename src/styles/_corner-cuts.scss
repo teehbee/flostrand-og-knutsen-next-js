@@ -21,6 +21,27 @@
   }
 }
 
+.img-clip-wrapper-small {
+  --corner-cut: 30px;
+
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &.top-right {
+    clip-path: polygon(0 0, calc(100% - var(--corner-cut)) 0, 100% var(--corner-cut), 100% 100%, 0 100%);
+  }
+
+  &.bottom-right {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--corner-cut)), calc(100% - var(--corner-cut)) 100%, 0 100%);
+  }
+}
+
 // Clip art om bottom on the right side
 
 .bottom-right-clip-art {
@@ -63,6 +84,10 @@
 @media screen and (min-width: 992px) {
   .img-clip-wrapper {
     --corner-cut: 80px;
+  }
+
+  .img-clip-wrapper-small {
+    --corner-cut: 50px;
   }
 
   .bottom-right-clip-art {

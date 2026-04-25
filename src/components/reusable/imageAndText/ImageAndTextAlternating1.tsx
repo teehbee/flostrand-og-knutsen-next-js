@@ -33,7 +33,7 @@ export const ImageAndTextAlternating1: React.FC<ImageTextAndLinkTilesProps> = ({
             <div key={item._id}>
               <div className={`d-flex flex-column flex-lg-row row pb-60 pb-lg-90 ${index % 2 !== 0 ? "flex-lg-row-reverse" : ""}`}>
                 <div className="d-flex col-12 col-lg-6 align-items-center pb-60 pb-lg-0">
-                  <div className="h-350-lg-450">
+                  <div className={`h-350-lg-450 img-clip-wrapper-small top-right ${index % 2 !== 0 ? "bottom-right" : "top-right"}`}>
                     <Image className="img-cover" src={item.imageUrl} alt={item.imageAlt} width={550} height={500} />
                   </div>
                 </div>
