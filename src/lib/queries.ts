@@ -199,9 +199,35 @@ upperArrayWithImageAndText {
     textContent,
     linkText,
     linkDestination
-  }
+  },
 },
-    
+      bottomBanner {
+    banner {
+      asset->,
+      alt,
+    },
+    title,
+    textContent,
+    linkText,
+    linkDestination,
+  },
+
+lowerArrayWithImageAndText {
+  "tiles": tileArray[] {
+    _key,
+    image {
+      asset->{
+        _id,
+        url
+      },
+      alt
+    },
+    title,
+    textContent,
+    linkText,
+    linkDestination
+  }
+  },
 }`;
 
 // 404 page
