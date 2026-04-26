@@ -13,8 +13,8 @@ export const TextBoxWithBorderAndPageNameLarge: React.FC<TextBoxWithPageNameProp
 
   return (
     <section>
-      <div className="container-wide border-top pt-15">
-        <div>
+      <div className="container-wide">
+        <div className="border-top pt-15">
           <span className="accent-color"> {"< >"} </span>
           {title ?? "Test"}
         </div>

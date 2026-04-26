@@ -169,11 +169,25 @@ export const contactPageQuery = `*[_type == "contact"][0] {
       asset->,
       alt,
     },
-    title,
+    pageTitle,
+    subHeading,
     textContent,
     linkText,
     linkDestination,
   },
+
+  contactInfo {
+    image {
+      asset->,
+      alt,
+    },
+    pageTitle,
+    subHeading,
+    textContent,
+    phoneTitle,
+    emailTitle,
+    adressTitle,
+  }
     
 }`;
 
