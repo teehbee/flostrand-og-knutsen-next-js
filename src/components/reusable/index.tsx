@@ -7,5 +7,6 @@ import { TextBoxesWithIcon, TextBoxWithBorderAndPageNameLarge, TextBoxWithBorder
 import { AccordionWithHeading } from "./accordions";
 import { LanguageSelector } from "./language";
 import { ImageSlider } from "./galleries";
+import { GoogleMap } from "./map";
 
-export { NavLink, TopBannerWithVideoTitleAndLink, ServicesSelector, PortraitAndTextCTA, ContactSectionSelector, SingleImageAndTextLarge, TextAndImageAlternateWithHeading, TextBoxesWithIcon, TextAndImageAlternate, SelectorWithArrowButtons, SelectorWithButtonsAndTextboxes, AccordionWithHeading, LanguageSelector, TopBannerImageTitleTextLink, TextBoxWithBorderAndPageNameLarge, TextBoxWithBorderAndPageNameMedium, TwoImagesWithTextTitleAndLink, ImageTextAndLinkTiles, BannerTopBottomClipArt, ImageAndTextAlternating1, BannerTopBottomClipArtWithTextContent, ImageSlider, ContactInfo };
+export { NavLink, TopBannerWithVideoTitleAndLink, ServicesSelector, PortraitAndTextCTA, ContactSectionSelector, SingleImageAndTextLarge, TextAndImageAlternateWithHeading, TextBoxesWithIcon, TextAndImageAlternate, SelectorWithArrowButtons, SelectorWithButtonsAndTextboxes, AccordionWithHeading, LanguageSelector, TopBannerImageTitleTextLink, TextBoxWithBorderAndPageNameLarge, TextBoxWithBorderAndPageNameMedium, TwoImagesWithTextTitleAndLink, ImageTextAndLinkTiles, BannerTopBottomClipArt, ImageAndTextAlternating1, BannerTopBottomClipArtWithTextContent, ImageSlider, ContactInfo, GoogleMap };
