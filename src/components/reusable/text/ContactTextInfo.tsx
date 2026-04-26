@@ -45,13 +45,21 @@ export const ContactInfo: React.FC<ContactInfoProps> = (content) => {
                 <div>
                   <h3>{phoneTitle}</h3>
                 </div>
-                <div>{phone ?? "Telefonnummer mangler"}</div>
+                <div>
+                  <a className="text-underline-hover" href={`tel:${phone}`}>
+                    {phone ?? "Telefonnr mangler"}
+                  </a>
+                </div>
               </div>
               <div className="border-bottom pb-15 mb-30">
                 <div>
                   <h3>{emailTitle}</h3>
                 </div>
-                <div>{email ?? "E-postadresse mangler"}</div>
+                <div>
+                  <a className="text-underline-hover" href={`mailto:${email}`}>
+                    {email ?? "E-post mangler"}
+                  </a>
+                </div>
               </div>
               <div className="border-bottom pb-15 mb-30">
                 <div>
