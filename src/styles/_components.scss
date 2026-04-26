@@ -102,6 +102,172 @@ $border-color: $accent-color;
 
 // Image slider and gallery
 
+.image-slider {
+  overflow-x: auto;
+
+  .image-slider-track {
+    width: max-content;
+    gap: 5px;
+
+    .image-slider-item {
+      width: 400px;
+      height: 300px;
+      border: 0;
+      overflow: hidden;
+      background: none;
+      flex: 0 0 auto;
+
+      img {
+        transition: transform 0.35s ease;
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.04);
+        }
+      }
+    }
+  }
+}
+
+// Image slider lightbox
+
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  background: rgba(0, 0, 0, 0.9);
+
+  .image-lightbox-content {
+    text-align: center;
+
+    .image-lightbox-image {
+      max-width: 88vw;
+      max-height: 82vh;
+      object-fit: contain;
+    }
+
+    .image-lightbox-caption {
+      margin-top: 16px;
+      color: white;
+    }
+  }
+
+  .image-lightbox-close,
+  .image-lightbox-nav {
+    width: 56px;
+    height: 56px;
+    position: fixed;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 0;
+    z-index: 2;
+
+    .bar {
+      position: absolute;
+      width: 32px;
+      height: 2px;
+      background-color: white;
+      transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+    }
+
+    &:hover .bar {
+      opacity: 0.75;
+    }
+  }
+
+  // Close icon
+
+  .image-lightbox-close {
+    top: 24px;
+    right: 24px;
+
+    .bar1 {
+      transform: rotate(45deg);
+    }
+
+    .bar2 {
+      transform: rotate(-45deg);
+    }
+
+    &:hover .bar1 {
+      transform: rotate(45deg) scale(1.2);
+    }
+
+    &:hover .bar2 {
+      transform: rotate(-45deg) scale(1.2);
+    }
+  }
+
+  // Prev icon
+
+  .image-lightbox-prev {
+    top: 50%;
+    left: 24px;
+    transform: translateY(-50%);
+
+    .bar {
+      width: 32px;
+      transform-origin: left center;
+    }
+
+    .bar1 {
+      transform: rotate(-45deg);
+    }
+
+    .bar2 {
+      transform: rotate(45deg);
+    }
+
+    &:hover .bar1 {
+      transform: rotate(-45deg) scale(1.1);
+    }
+
+    &:hover .bar2 {
+      transform: rotate(45deg) scale(1.1);
+    }
+  }
+
+  // Next icon
+
+  .image-lightbox-next {
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+
+    .bar {
+      width: 32px;
+      transform-origin: right center;
+    }
+
+    .bar1 {
+      transform: rotate(45deg);
+    }
+
+    .bar2 {
+      transform: rotate(-45deg);
+    }
+
+    &:hover .bar1 {
+      transform: rotate(45deg) scale(1.1);
+    }
+
+    &:hover .bar2 {
+      transform: rotate(-45deg) scale(1.1);
+    }
+  }
+}
+
 @media screen and (min-width: 768px) {
   // Selector with arrow buttons
 

@@ -12,8 +12,6 @@ const ServicesContent: React.FC = () => {
   const params = useParams<{ slug: string }>();
   const data = useSanityData<ServicePageInterface>(serviceBySlugQuery, { slug: params.slug });
 
-  console.log(data);
-
   if (!data) {
     return null;
   }
@@ -44,7 +42,14 @@ const ServicesContent: React.FC = () => {
           })) ?? []
         }
       />
-      <ImageSlider />
+      <ImageSlider
+        images={(data.imageSlider?.images ?? []).map((img) => ({
+          _key: img._key,
+          imageUrl: img.asset?.url || "",
+          imageAlt: img.alt?.[language] || "",
+          caption: img.caption?.[language] || "",
+        }))}
+      />
     </>
   );
 };
