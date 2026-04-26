@@ -108,24 +108,22 @@ $border-color: $accent-color;
   .image-slider-track {
     width: max-content;
     gap: 5px;
+  }
 
-    .image-slider-item {
-      width: 400px;
-      height: 300px;
-      border: 0;
-      overflow: hidden;
-      background: none;
-      flex: 0 0 auto;
+  .image-slider-item {
+    width: 400px;
+    height: 300px;
+    border: 0;
+    overflow: hidden;
+    background: none;
+    flex: 0 0 auto;
 
-      img {
-        transition: transform 0.35s ease;
-      }
+    img {
+      transition: transform 0.35s ease;
+    }
 
-      &:hover {
-        img {
-          transform: scale(1.04);
-        }
-      }
+    &:hover img {
+      transform: scale(1.04);
     }
   }
 }
@@ -144,17 +142,26 @@ $border-color: $accent-color;
 
   .image-lightbox-content {
     text-align: center;
+  }
 
-    .image-lightbox-image {
-      max-width: 88vw;
-      max-height: 82vh;
-      object-fit: contain;
+  .image-lightbox-image {
+    max-width: 88vw;
+    max-height: 82vh;
+    object-fit: contain;
+    animation: lightboxFade 0.3s ease;
+
+    &.is-next {
+      animation: lightboxNext 0.3s ease;
     }
 
-    .image-lightbox-caption {
-      margin-top: 16px;
-      color: white;
+    &.is-prev {
+      animation: lightboxPrev 0.3s ease;
     }
+  }
+
+  .image-lightbox-caption {
+    margin-top: 16px;
+    color: white;
   }
 
   .image-lightbox-close,
@@ -186,8 +193,6 @@ $border-color: $accent-color;
     }
   }
 
-  // Close icon
-
   .image-lightbox-close {
     top: 24px;
     right: 24px;
@@ -209,15 +214,12 @@ $border-color: $accent-color;
     }
   }
 
-  // Prev icon
-
   .image-lightbox-prev {
     top: 50%;
     left: 24px;
     transform: translateY(-50%);
 
     .bar {
-      width: 32px;
       transform-origin: left center;
     }
 
@@ -238,15 +240,12 @@ $border-color: $accent-color;
     }
   }
 
-  // Next icon
-
   .image-lightbox-next {
     top: 50%;
     right: 24px;
     transform: translateY(-50%);
 
     .bar {
-      width: 32px;
       transform-origin: right center;
     }
 
@@ -265,6 +264,42 @@ $border-color: $accent-color;
     &:hover .bar2 {
       transform: rotate(-45deg) scale(1.1);
     }
+  }
+}
+
+// Animations
+
+@keyframes lightboxNext {
+  from {
+    opacity: 0;
+    transform: translateX(16px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes lightboxPrev {
+  from {
+    opacity: 0;
+    transform: translateX(-16px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes lightboxFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 
