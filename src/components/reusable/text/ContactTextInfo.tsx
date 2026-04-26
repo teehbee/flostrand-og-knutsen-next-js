@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { PortableText, PortableTextBlock } from "@portabletext/react";
+import { GoogleMap } from "../map";
 
 export interface ContactInfoProps {
   pageTitle: string;
@@ -66,7 +67,7 @@ export const ContactInfo: React.FC<ContactInfoProps> = (content) => {
                   <Image className="img-cover" src={image.asset?.url ?? ""} alt={image?.alt ?? "Bildebeskrivelse mangler"} width={550} height={500} />
                 </div>
               </div>
-              <div>Google Maps</div>
+              <GoogleMap address={`${address}, ${zipAndCity}`} />
             </div>
           </div>
         </div>
