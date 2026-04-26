@@ -4,15 +4,13 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useSanityData } from "@/utils";
 import { ServicePageInterface } from "@/data/interface/pages/servicePageInterface";
 import { serviceBySlugQuery } from "@/lib/queries";
-import { TopBannerImageTitleTextLink, TextBoxWithBorderAndPageNameLarge, ImageAndTextAlternating1 } from "@/components/reusable";
+import { TopBannerImageTitleTextLink, TextBoxWithBorderAndPageNameLarge, ImageAndTextAlternating1, ImageSlider } from "@/components/reusable";
 import { useParams } from "next/navigation";
 
 const ServicesContent: React.FC = () => {
   const { language } = useLanguage();
   const params = useParams<{ slug: string }>();
   const data = useSanityData<ServicePageInterface>(serviceBySlugQuery, { slug: params.slug });
-
-  console.log(data);
 
   if (!data) {
     return null;
@@ -43,6 +41,14 @@ const ServicesContent: React.FC = () => {
             linkHref: tile?.linkDestination ?? "",
           })) ?? []
         }
+      />
+      <ImageSlider
+        images={(data.imageSlider?.images ?? []).map((img) => ({
+          _key: img._key,
+          imageUrl: img.asset?.url || "",
+          imageAlt: img.alt?.[language] || "",
+          caption: img.caption?.[language] || "",
+        }))}
       />
     </>
   );

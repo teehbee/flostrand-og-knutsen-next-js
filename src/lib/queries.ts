@@ -140,9 +140,20 @@ export const serviceBySlugQuery = `
       textContent,
       linkText,
       linkDestination
-    }
+    }, 
+
+imageSlider {
+  "images": images[] {
+    _key,
+    asset->{
+      _id,
+      url
+    },
+    alt,
+    caption
   }
-`;
+},
+  }`;
 
 export const serviceSlugsQuery = `
   *[_type == "service" && defined(slug.current)]{

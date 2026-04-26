@@ -6,5 +6,6 @@ import { SingleImageAndTextLarge, TextAndImageAlternateWithHeading, TextAndImage
 import { TextBoxesWithIcon, TextBoxWithBorderAndPageNameLarge, TextBoxWithBorderAndPageNameMedium } from "./text";
 import { AccordionWithHeading } from "./accordions";
 import { LanguageSelector } from "./language";
+import { ImageSlider } from "./galleries";
 
-export { NavLink, TopBannerWithVideoTitleAndLink, ServicesSelector, PortraitAndTextCTA, ContactSectionSelector, SingleImageAndTextLarge, TextAndImageAlternateWithHeading, TextBoxesWithIcon, TextAndImageAlternate, SelectorWithArrowButtons, SelectorWithButtonsAndTextboxes, AccordionWithHeading, LanguageSelector, TopBannerImageTitleTextLink, TextBoxWithBorderAndPageNameLarge, TextBoxWithBorderAndPageNameMedium, TwoImagesWithTextTitleAndLink, ImageTextAndLinkTiles, BannerTopBottomClipArt, ImageAndTextAlternating1, BannerTopBottomClipArtWithTextContent };
+export { NavLink, TopBannerWithVideoTitleAndLink, ServicesSelector, PortraitAndTextCTA, ContactSectionSelector, SingleImageAndTextLarge, TextAndImageAlternateWithHeading, TextBoxesWithIcon, TextAndImageAlternate, SelectorWithArrowButtons, SelectorWithButtonsAndTextboxes, AccordionWithHeading, LanguageSelector, TopBannerImageTitleTextLink, TextBoxWithBorderAndPageNameLarge, TextBoxWithBorderAndPageNameMedium, TwoImagesWithTextTitleAndLink, ImageTextAndLinkTiles, BannerTopBottomClipArt, ImageAndTextAlternating1, BannerTopBottomClipArtWithTextContent, ImageSlider };
