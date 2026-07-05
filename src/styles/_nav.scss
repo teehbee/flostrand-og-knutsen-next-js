@@ -81,6 +81,8 @@ header {
   padding: 20px 15px 20px;
   width: 100%;
   z-index: 200;
+  max-width: 2500px;
+  margin: 0 auto;
   transition:
     background 0.3s ease,
     padding 0.3s ease,
