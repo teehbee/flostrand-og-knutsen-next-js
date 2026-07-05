@@ -14,28 +14,41 @@ const Header: React.FC<HeaderProps> = ({ stickyOnscroll = true }) => {
   const { isSticky, spacerHeight } = useStickyScroll(stickyOnscroll, headerRef);
 
   // Language support
-  // Define supported languages here
   const langs = ["", "en"];
 
-  // Define base paths here
-  const basePaths = ["", "om-oss", "kontakt", "personvern"];
+  // Static pages
+  const basePaths = ["", "om-oss", "kontakt", "personvern", "tjenester"];
 
-  // Automatically define path for all languages
-  const knownPaths = langs.flatMap((lang) =>
-    basePaths.map((p) => {
-      // Make sure correct syntax
-      if (lang === "") return p === "" ? "/" : `/${p}`;
-      return p === "" ? `/${lang}` : `/${lang}/${p}`;
-    }),
-  );
+  // Normalize pathname, removes trailing slash except for "/"
+  const normalizePath = (path?: string | null) => {
+    if (!path) return "/";
+    return path !== "/" ? path.replace(/\/+$/, "") : path;
+  };
 
-  // Page detection
+  const makePath = (lang: string, path: string) => {
+    const parts = [lang, path].filter(Boolean);
+    return parts.length ? `/${parts.join("/")}` : "/";
+  };
+
+  const currentPath = normalizePath(pathname);
+
+  // Static paths
+  const knownStaticPaths = langs.flatMap((lang) => basePaths.map((p) => makePath(lang, p)));
+
+  // Dynamic service paths: /tjenester/[slug] and /en/tjenester/[slug]
+  const knownDynamicPaths = langs.map((lang) => {
+    const prefix = makePath(lang, "tjenester");
+    return new RegExp(`^${prefix}/[^/]+$`);
+  });
 
   // Check if page is privacy page
-  const isPrivacyPage = langs.some((lang) => pathname?.endsWith(`${lang ? `/${lang}` : ""}/personvern`));
+  const isPrivacyPage = langs.some((lang) => currentPath === makePath(lang, "personvern"));
 
   // 404-page, if not amongst known pages
-  const is404Page = pathname && !knownPaths.includes(pathname);
+  const isKnownStaticPath = knownStaticPaths.includes(currentPath);
+  const isKnownDynamicPath = knownDynamicPaths.some((regex) => regex.test(currentPath));
+
+  const is404Page = pathname && !isKnownStaticPath && !isKnownDynamicPath;
 
   // Render
   return (
