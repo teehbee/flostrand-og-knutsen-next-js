@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import "../styles/styles.scss";
 import { getFontClasses } from "@/lib/fonts";
-// import Script from "next/script";
+import Script from "next/script";
 import { LanguageProvider } from "@/context/LanguageContext";
 import ClientLayoutWrapper from "./ClientLayoutWrapper";
 
 export const dynamicParams = true; // gjør at dynamiske ruter (f.eks. /slug) fungerer
 export const dynamic = "force-dynamic"; // tvinger Next til å evaluere alle stier ved runtime
 
-// const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
+const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
 
 export const metadata: Metadata = {
   title: {
@@ -32,7 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html suppressHydrationWarning>
       <head>
-        {/* <Script
+        <Script
           id="gtm-script"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
@@ -49,7 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               })(window,document,'script','dataLayer','${gtmId}');
             `,
           }}
-        /> */}
+        />
       </head>
 
       <body className={getFontClasses()}>
